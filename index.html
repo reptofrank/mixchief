@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>MixChief</title>
+</head>
+<body>
+    <header style="position: relative;">
+        <div class="header-content">
+            <div class="header-content---inner">
+                <h1>MixChief</h1>
+                <p>Leaving a good taste in your mouth</p>
+            </div>
+        </div>
+
+    </header>
+    <div class="tab">
+        <div class="search-drinks-menu" id="menu">
+            <input type="text" class="form-control filter-drinks" placeholder="Search menu">
+            <span class="clear-text"><i class="fa fa-times"></i></span>
+        </div>
+        <section class="place-menu">
+            <div class="search-filters">
+                <button type="button" class="button btn-circle filter-category active" data-attr="all">
+                    All
+                </button>
+                <button type="button" class="button btn-circle filter-category" data-attr="classic">
+                    Classic Cocktails
+                </button>
+                <button type="button" class="button btn-circle filter-category" data-attr="signature">
+                    Signature Signature
+                </button>
+            </div>
+            <div class="place-menu-items" id="drinks-container">
+                
+            </div>
+        </section>
+    </div>
+    <script>
+        document.querySelector('.filter-drinks').addEventListener('keyup', filterItems)
+
+        const capitalize = (str) => 
+            str ? str.split(" ").map(word => {
+                if (typeof word != "string") return word;
+                else return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+            }).join(" ") : '';
+    
+
+
+        function drinkTemplate(drink, i, place_slug) {
+
+            let img = drink.img ? 
+                `<div class="drink-img">
+                    <img src="${drink.img}" />
+                </div>` : '';
+            return `
+                <div class="place-menu-item-container">
+                    ${img}
+                    <div class="place-menu-item drink-item review-wrapper" data-id="${i}" data-index="${i}">
+                        <div class="place-menu-name drink-name">
+                            ${drink.name}
+                        </div>
+                        <div class="place-menu-price">&#x20A6;${drink.price}</div>
+                        <div class="place-menu-description">
+                            ${drink.description}
+                        </div>
+                        <div class="drink-category">
+                            ${drink.category ? capitalize(drink.category) : ''}
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        const cocktails = [
+            {
+                name: "Long Island Iced Tea",
+                description: "Rum, Gin, Vodka, Tequila, Triple Sec, Lemon Juice and Soda",
+                price: 3000,
+                category: "classic"
+            },
+            {
+                name: "Die Hard",
+                description: "Rum, Gin, Vodka, Tequila, Triple Sec, Lemon Juice and Soda",
+                price: 3000,
+                category: "signature"
+            },
+            {
+                name: "Desperado",
+                description: "Rum, Gin, Vodka, Tequila, Triple Sec, Lemon Juice and Soda",
+                price: 3000,
+                category: "signature"
+            },
+            {
+                name: "Rush Hour",
+                description: "Rum, Gin, Vodka, Tequila, Triple Sec, Lemon Juice and Soda",
+                price: 3000,
+                category: "signature"
+            },
+            {
+                name: "Black Russian",
+                description: "Rum, Gin, Vodka, Tequila, Triple Sec, Lemon Juice and Soda",
+                price: 3000,
+                category: "classic"
+            },
+            {
+                name: "White Russian",
+                description: "Rum, Gin, Vodka, Tequila, Triple Sec, Lemon Juice and Soda",
+                price: 3000,
+                category: "classic"
+            },
+            {
+                name: "Mojito",
+                description: "Rum, Gin, Vodka, Tequila, Triple Sec, Lemon Juice and Soda",
+                price: 3000,
+                category: "classic"
+            }
+        ]
+
+        let filteredItems = [...cocktails]
+
+        function filterItems(e) {
+            const inp = e.target.value;
+            filteredItems = [...cocktails].filter(item => item.name.toLowerCase().includes(inp.toLowerCase()));
+            document.getElementById('drinks-container').innerHTML = filteredItems.map((cocktail, i) => drinkTemplate(cocktail, i)).join("")
+        }
+
+        document.getElementById('drinks-container').innerHTML = cocktails.map((cocktail, i) => drinkTemplate(cocktail, i)).join("")
+
+        document.querySelectorAll('.filter-category').forEach(catButton => {
+            catButton.addEventListener('click', e => {
+                e.preventDefault()
+                const chosen = catButton.dataset.attr;
+                filteredItems = chosen === "all" ? [...cocktails] : [...cocktails].filter(item => item.category.toLowerCase() === chosen.toLowerCase());
+                document.getElementById('drinks-container').innerHTML = filteredItems.map((cocktail, i) => drinkTemplate(cocktail, i)).join("")
+                document.querySelectorAll('.filter-category').forEach(b => b.classList.remove('active'))
+                catButton.classList.add('active')
+            })
+        })
+    </script>
+</body>
+</html>
