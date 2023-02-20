@@ -11,8 +11,10 @@
     <header style="position: relative;">
         <div class="header-content">
             <div class="header-content---inner">
+                <img src="/images/mixchief-no-label-trans.png" alt="Logo">
                 <h1>MixChief</h1>
-                <p>Leaving a good taste in your mouth</p>
+                <p>Superior quality, better tasting cocktails.</p>
+                <p>To order: Call <a href="tel:+2348133277306">08133277306</a> or Send a message on WhatsApp to <a href="https://wa.me/2348180871672">+2348180871672</a></p>
             </div>
         </div>
 
@@ -20,7 +22,7 @@
     <div class="tab">
         <div class="search-drinks-menu" id="menu">
             <input type="text" class="form-control filter-drinks" placeholder="Search menu">
-            <span class="clear-text"><i class="fa fa-times"></i></span>
+            <!-- <span class="clear-text"><i class="fa fa-times"></i></span> -->
         </div>
         <section class="place-menu">
             <div class="search-filters">
@@ -78,45 +80,69 @@
         const cocktails = [
             {
                 name: "Long Island Iced Tea",
-                description: "Rum, Gin, Vodka, Tequila, Triple Sec, Lemon Juice and Soda",
+                description: "Rum, Gin, Vodka, Tequila, Triple Sec, Fresh Lemon juice and Soda",
+                price: 2700,
+                category: "classic"
+            },
+            {
+                name: "Mojito",
+                description: "White rum, sweet and sour mix, mint and soda",
+                price: 2700,
+                category: "classic"
+            },
+            {
+                name: "Whiskey Sour",
+                description: "Bourbon, sweet and sour mix",
+                price: 2700,
+                category: "classic"
+            },
+            {
+                name: "Classic Margarita",
+                description: "Tequila, Triple Sec, sweet and sour mix",
                 price: 3000,
                 category: "classic"
             },
             {
-                name: "Die Hard",
-                description: "Rum, Gin, Vodka, Tequila, Triple Sec, Lemon Juice and Soda",
-                price: 3000,
-                category: "signature"
-            },
-            {
-                name: "Desperado",
-                description: "Rum, Gin, Vodka, Tequila, Triple Sec, Lemon Juice and Soda",
-                price: 3000,
-                category: "signature"
-            },
-            {
-                name: "Rush Hour",
-                description: "Rum, Gin, Vodka, Tequila, Triple Sec, Lemon Juice and Soda",
-                price: 3000,
-                category: "signature"
-            },
-            {
                 name: "Black Russian",
-                description: "Rum, Gin, Vodka, Tequila, Triple Sec, Lemon Juice and Soda",
+                description: "Vodka, coffee liqeuer",
+                price: 3000,
+                category: "classic"
+            },
+            {
+                name: "Daquiri",
+                description: "Rum, sweet and sour mix",
                 price: 3000,
                 category: "classic"
             },
             {
                 name: "White Russian",
-                description: "Rum, Gin, Vodka, Tequila, Triple Sec, Lemon Juice and Soda",
+                description: "Vodka, coffee liqeuer, full cream milk",
                 price: 3000,
                 category: "classic"
             },
             {
-                name: "Mojito",
-                description: "Rum, Gin, Vodka, Tequila, Triple Sec, Lemon Juice and Soda",
+                name: "Negroni",
+                description: "Gin, sweet vermouth and campari",
                 price: 3000,
                 category: "classic"
+            },
+            {
+                name: "Manhattan",
+                description: "Bourbon, sweet vermouth and angostura bitters",
+                price: 3000,
+                category: "classic"
+            },
+            {
+                name: "Deep Blue Sea",
+                description: "Rum, vodka, blue curacao, pineapple juice, ",
+                price: 3000,
+                category: "signature"
+            },
+            {
+                name: "Rush Hour",
+                description: "Whiskey, honey, fresh lime juice",
+                price: 3000,
+                category: "signature"
             }
         ]
 

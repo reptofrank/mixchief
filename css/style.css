@@ -27,17 +27,27 @@ body {
     margin: 0;
 }
 
+* {
+    margin: 0;
+}
+
+header a {
+    color: #ccc;
+    text-decoration: underline;
+}
+
 button {
     border: 1px solid;
 }
 
 header {
-    background-image: url('/images/hero.jpg');
+    background-image: url('/images/banner.jpg');
     height: 300px;
     width: 100%;
     background-size: cover;
     background-position: center;
     position: relative;
+    padding: 20px 0;
 }
 
 .header-content {
@@ -56,8 +66,16 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 4px;
+    gap: 20px;
     color: #fff;
+}
+
+.header-content---inner img {
+    width: 100px;
+}
+
+.header-content---inner p {
+    text-align: center;
 }
 
 .reserve-block p {
@@ -83,8 +101,8 @@ a.tag {
 }
 
 .form-control {
-    padding: .8rem 1.2rem;
-    width: 100%;
+    /* padding: .8rem 1.2rem; */
+    /* width: 100%; */
 }
 
 .highlight {
@@ -215,6 +233,7 @@ a.tag {
     border-left: 0;
     border-radius: 0;
     outline: none;
+    border-bottom: 0;
 }
 
 .place-menu {
@@ -223,15 +242,10 @@ a.tag {
 }
 
 .search-drinks-menu {
-    border-bottom: 1px solid #ccc;
-    position: sticky;
-    top: 0;
+    /* border-bottom: 1px solid #ccc; */
     background: #fff;
-    border-radius: 0%;
+    border-radius: 0;
     border: none;
-    border-top: 1px solid #ccc;
-    /* height: inherit; */
-    top: 0;
     z-index: 1000;
 }
 
@@ -282,6 +296,10 @@ a.tag {
     -ms-overflow-style: none;
     scrollbar-width: none;
     margin-top: 20px;
+    display: flex;
+    gap: 5px;
+    padding-left: 15px;
+    margin-bottom: 20px;
 }
 
 .search-filters::-webkit-scrollbar {
@@ -306,7 +324,7 @@ a.tag {
     display: grid;
     grid-template-columns: repeat(3, minmax(30%, 1fr));
     grid-gap: 20px;
-    margin-top: 60px;
+    margin-top: 40px;
 }
 
 .place-menu-item-container {
@@ -390,7 +408,7 @@ a.tag {
 
 @media (max-width:400px) {
     .place-menu-items {
-        margin-top: 0;
+        margin-top: 20px;
     }
 
     .place-menu-item-container .food-img img {
