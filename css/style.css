@@ -68,6 +68,8 @@ header {
     align-items: center;
     gap: 20px;
     color: #fff;
+    max-width: 90%;
+    line-height: 1.5;
 }
 
 .header-content---inner img {
@@ -404,6 +406,15 @@ a.tag {
 .place-menu-item .rate-link a:hover {
     color: #C32022;
     text-decoration: none;
+}
+
+.order-link {
+    text-decoration: none;
+    border: 1px solid #222;
+    padding: 4px;
+    font-size: 14px;
+    border-radius: 5px;
+    color: #222;
 }
 
 @media (max-width:400px) {
